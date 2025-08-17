@@ -1,0 +1,66 @@
+:root,
+:root *:not(:is(pre, pre *)) {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+:root {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  @media (prefers-color-scheme: dark) {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+  }
+}
+
+#root {
+  padding: 1rem;
+}
+
+#root .app {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.app .build-info {
+  display: inline-block;
+  padding: 0.5em;
+  color: rgb(94, 119, 82);
+  background-color: rgb(236, 250, 229);
+  border: 2px solid rgb(176, 219, 156);
+  @media (prefers-color-scheme: dark) {
+    color: rgb(176, 219, 156);
+    background-color: transparent;
+  }
+}
+
+.markdown *:not(:is(pre, pre *)) {
+  margin-bottom: 0.5em;
+  &:is(h1, h2) {
+    padding: 0.75em 0;
+    border-bottom: 1px solid currentColor;
+  }
+  &:is(code) {
+    padding: 2px 4px;
+    background-color: rgba(208, 160, 208, 0.25);
+    border: 1px solid rgb(208, 160, 208);
+    @media (prefers-color-scheme: dark) {
+      background-color: rgba(77, 0, 77, 0.5);
+      border: 1px solid rgb(77, 0, 77);
+    }
+  }
+}
+
+.markdown pre {
+  margin: 1em 0;
+}
+
+.app .footer {
+  padding-top: 1em;
+  margin-top: 1em;
+  text-align: center;
+  border-top: 1px solid currentColor;
+}

@@ -45,6 +45,7 @@
   }
   &:is(code) {
     padding: 2px 4px;
+    overflow-wrap: break-word;
     background-color: rgba(208, 160, 208, 0.25);
     border: 1px solid rgb(208, 160, 208);
     @media (prefers-color-scheme: dark) {

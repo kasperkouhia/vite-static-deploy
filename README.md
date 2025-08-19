@@ -21,7 +21,7 @@ This guide assumes that you are running npm, have Vite installed as a local dev 
 
 Before deploying to GitHub Pages, you'll want to make sure the production build of the app looks and functions fine in your local environment.
 
-First, run `npm run build` to build the app:
+First, run `npm run build` in the terminal to build the app:
 
 ```bash
 npm run build
@@ -61,7 +61,7 @@ You may also remove `base` from the configuration file, as it defaults to `"/"`.
 
 When deploying to `https://<USERNAME>.github.io/<REPOSITORY>/` (meaning your repository is located at `https://github.com/<USERNAME>/<REPOSITORY>`), you'll want to set `base` to `"/<REPOSITORY>/"`.
 
-For example, this app has its `base` set to `"/vite-static-deploy/"`.
+For example, for this repository the `base` is set to `"/vite-static-deploy/"`.
 
 ```js
 // vite.config.js
@@ -71,9 +71,9 @@ export default defineConfig({
 });
 ```
 
-Then, navigate to the app's GitHub Pages configuration in the repository settings (located at `https://github.com/<USERNAME>/<REPOSITORY>/settings/pages`). Set the deployment source to "GitHub Actions".
+Next, navigate to the app's GitHub Pages configuration in the repository settings (located at `https://github.com/<USERNAME>/<REPOSITORY>/settings/pages`). Set the deployment source to "GitHub Actions".
 
-Next, create the directory `.github/workflows` at the root of the app.
+Then, create the directory `.github/workflows` at the root of the app.
 
 Create a new `deploy.yml` file in the directory, with the following contents:
 
@@ -137,11 +137,13 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
+Commit it to the repository and push it to GitHub.
+
 Now you have a workflow that will automatically build and deploy your project whenever a push is made to the `main` branch of the repository.
 
 It may also be run manually from the repository's Actions tab.
 
-In most projects you may also want to ignore pushes targeting markdown files to prevent unnecessary builds.
+In most projects you may also want to ignore pushes targeting markdown files to prevent unnecessary builds. You can achieve this by adding the following to the workflow file:
 
 ```yaml
 # .github/workflows/deploy.yml
